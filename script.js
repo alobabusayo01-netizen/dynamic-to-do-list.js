@@ -45,6 +45,23 @@ function addTask(taskText, save = true) {
         localStorage.setItem('tasks', JSON.stringify(storedTasks));
     }
 }
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const data = await response.json(); 
+    console.log('Success:', data); 
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+fetchData();
+
 
     document.getElementById("task-input error").textContent = "";
     document.getElementById("task-list-error").textContent = "";
