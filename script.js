@@ -4,6 +4,10 @@ const form = document.getElementById("myForm");
 form.addEventListener("submit", function addTask() {
     e.preventDefault();
 
+    <li>  
+document.getElementById("remove-Btn").onClickEvent("click", displayDate);
+</li>
+
     document.getElementById("myBtn").addEventListener("click", displayDate);
 
     const taskInput = document.getElementById("task-input").value;
