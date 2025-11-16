@@ -1,4 +1,5 @@
 
+document.addEventListener;
 const form = document.getElementById("dynamic-to-do-list-form");
 
 form.addEventListener("submit", function addTask() {
