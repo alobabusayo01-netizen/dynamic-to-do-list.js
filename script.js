@@ -25,6 +25,25 @@ document.getElementById("taskInput").addEventListener("click", keypress);
             return addTask;
         }
 
+function loadTasks() {
+    const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+    storedTasks.forEach(taskText => addTask(taskText, false)); // 'false' indicates not to save again to Local Storage
+}
+document.addEventListener('DOMContentLoaded', () => {
+    loadTasks();
+    // Other initialization code
+})
+
+// Adjust `addTask` to optionally save tasks to avoid duplication when loading from Local Storage
+function addTask(taskText, save = true) {
+    // Task creation logic remains the same
+
+    if (save) {
+        const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+        storedTasks.push(taskText);
+        localStorage.setItem('tasks', JSON.stringify(storedTasks));
+    }
+}
 
     document.getElementById("task-input error").textContent = "";
     document.getElementById("task-list-error").textContent = "";
