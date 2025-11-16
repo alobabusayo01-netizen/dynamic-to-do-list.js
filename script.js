@@ -1,6 +1,7 @@
 
 document.addEventListener;
 const form = document.getElementById("dynamic-to-do-list-form");
+method = 'GET'
 
 form.addEventListener("submit", function addTask() {
     e.preventDefault();
